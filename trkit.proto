@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+service LocationService {
+  rpc Retrieve(LocationRequest) returns (LocationResponse) {}
+}
+
+message LocationRequest {
+  string did = 1;
+}
+
+message Position {
+  float latitude = 1;
+  float longitude = 2;
+}
+
+message LocationResponse {
+  repeated Position locations = 1;
+}
